@@ -1,25 +1,60 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 120" width="100%" height="100%">
   <defs>
-    <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FF2A5F" />
-      <stop offset="100%" stop-color="#8B5CF6" />
-    </linearGradient>
+    <!-- Concentric Masks to cut out separating gaps between nested letters C, G, and R -->
+    <mask id="mask-c">
+      <rect width="320" height="200" fill="white" />
+      <circle cx="160" cy="100" r="65" stroke="black" stroke-width="48" fill="none" />
+    </mask>
+
+    <mask id="mask-g">
+      <rect width="320" height="200" fill="white" />
+      <path 
+        d="M 235 165 V 35 H 270 A 32.5 32.5 0 0 1 270 100 H 235 M 235 100 L 285 165" 
+        stroke="black" 
+        stroke-width="48" 
+        fill="none" 
+        stroke-linecap="butt" 
+        stroke-linejoin="round" 
+      />
+    </mask>
   </defs>
-  <!-- Stylized Hair Shear / Letter 'J' & 'S' Icon -->
-  <g transform="translate(10, 10)">
-    <!-- Scissor handle loop left -->
-    <circle cx="45" cy="40" r="18" fill="none" stroke="url(#logo-grad)" stroke-width="6" />
-    <!-- Scissor handle loop right -->
-    <circle cx="45" cy="80" r="18" fill="none" stroke="url(#logo-grad)" stroke-width="6" />
-    <!-- Scissor blade top/cross -->
-    <path d="M 50 45 L 85 75" stroke="url(#logo-grad)" stroke-width="6" stroke-linecap="round" />
-    <!-- Scissor blade bottom/cross -->
-    <path d="M 50 75 L 105 35" stroke="url(#logo-grad)" stroke-width="6" stroke-linecap="round" />
-    <!-- Pivot screw -->
-    <circle cx="65" cy="58" r="4" fill="#FFFFFF" />
+
+  <!-- Scaled and Centered CGR Monogram -->
+  <g transform="translate(15, 10) scale(0.5)">
+    <!-- Letter C -->
+    <path 
+      d="M 175 35 H 95 A 65 65 0 0 0 95 165 H 175" 
+      stroke="#FFFFFF" 
+      stroke-width="24" 
+      fill="none" 
+      stroke-linecap="butt" 
+      stroke-linejoin="round" 
+      mask="url(#mask-c)"
+    />
+
+    <!-- Letter G -->
+    <path 
+      d="M 225 65 A 65 65 0 1 0 225 135 H 235 V 100 H 180" 
+      stroke="#FFFFFF" 
+      stroke-width="24" 
+      fill="none" 
+      stroke-linecap="butt" 
+      stroke-linejoin="round" 
+      mask="url(#mask-g)"
+    />
+
+    <!-- Letter R -->
+    <path 
+      d="M 235 165 V 35 H 270 A 32.5 32.5 0 0 1 270 100 H 235 M 235 100 L 285 165" 
+      stroke="#FFFFFF" 
+      stroke-width="24" 
+      fill="none" 
+      stroke-linecap="butt" 
+      stroke-linejoin="round" 
+    />
   </g>
 
   <!-- Typography -->
-  <text x="135" y="62" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="38" fill="#FFFFFF" letter-spacing="0.05em">JAYSON</text>
-  <text x="135" y="90" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="16" fill="#8B5CF6" letter-spacing="0.4em">HAIR SALON</text>
+  <text x="175" y="62" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="34" fill="#FFFFFF" letter-spacing="0.06em">COME GET RIGHT</text>
+  <text x="175" y="92" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="14" fill="#FFFFFF" fill-opacity="0.85" letter-spacing="0.38em">— BARBERSHOP —</text>
 </svg>

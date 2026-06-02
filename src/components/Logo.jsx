@@ -1,33 +1,67 @@
 import React from 'react';
+import logoImg from '../assets/logo.jpg';
 
 export default function Logo({ className = '', height = '45px' }) {
   return (
-    <div className={`${className}`} style={{ height, display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
-      {/* Premium Stylized Barber Pole Icon */}
-      <svg 
-        viewBox="0 0 24 24" 
-        style={{ height: '32px', width: '32px', fill: 'none', stroke: 'url(#pole-grad)', strokeWidth: 2 }}
-      >
-        <defs>
-          <linearGradient id="pole-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="var(--accent-fuchsia)" />
-            <stop offset="50%" stopColor="#FFFFFF" />
-            <stop offset="100%" stopColor="var(--accent-violet)" />
-          </linearGradient>
-        </defs>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 3h6M12 3v18M8 6h8c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2zM6 9h12M6 15h12" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M10 6l4 4M10 10l4 4M10 14l4 4" />
-      </svg>
-      <span style={{ 
-        fontFamily: 'var(--font-heading)', 
-        fontSize: '22px', 
-        fontWeight: '900', 
-        letterSpacing: '0.02em', 
-        color: 'var(--text-primary)',
-        textTransform: 'uppercase'
+    <div className={`${className}`} style={{ height, display: 'inline-flex', alignItems: 'center', gap: '14px' }}>
+      {/* Monogram image cropped from the shared JPEG logo, with filters to blend into dark background */}
+      <div style={{ 
+        height: '100%', 
+        aspectRatio: '1', 
+        overflow: 'hidden', 
+        position: 'relative',
+        filter: 'invert(1)',
+        mixBlendMode: 'screen',
+        flexShrink: 0
       }}>
-        Come Get <span className="text-gradient">Right</span>
-      </span>
+        <img 
+          src={logoImg} 
+          alt="CGR Monogram" 
+          style={{ 
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: 'auto',
+            display: 'block',
+            transform: 'scale(1.4)', // Zooms in on the CGR monogram symbol
+            transformOrigin: 'top center',
+            marginTop: '-5%' // Centers the monogram vertically within the cropped frame
+          }} 
+        />
+      </div>
+
+      {/* Brand Typography */}
+      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        <span style={{ 
+          fontFamily: 'var(--font-heading)', 
+          fontSize: '18px', 
+          fontWeight: '900', 
+          letterSpacing: '0.06em', 
+          color: 'var(--text-primary)',
+          textTransform: 'uppercase',
+          lineHeight: '1.1'
+        }}>
+          COME GET RIGHT
+        </span>
+        <span style={{ 
+          fontFamily: 'var(--font-heading)', 
+          fontSize: '8.5px', 
+          fontWeight: '700', 
+          letterSpacing: '0.36em', 
+          color: 'var(--text-primary)',
+          textTransform: 'uppercase',
+          lineHeight: '1',
+          marginTop: '3px',
+          opacity: 0.85,
+          whiteSpace: 'nowrap'
+        }}>
+          — BARBERSHOP —
+        </span>
+      </div>
     </div>
   );
 }
+
+
+

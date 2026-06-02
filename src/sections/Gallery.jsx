@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import { Camera, Heart, Eye } from 'lucide-react';
 
+// Import local premium image assets
+import midSkinFadeImg from '../assets/mid_skin_fade.png';
+import classicScissorCutImg from '../assets/classic_scissor_cut.png';
+import razorBeardDetailImg from '../assets/razor_beard_detail.png';
+import texturedPompadourImg from '../assets/textured_pompadour.png';
+import beardGroomingOilImg from '../assets/beard_grooming_oil.png';
+import buzzCutLineupImg from '../assets/buzz_cut_lineup.png';
+
 const FILTER_TABS = ['All', 'Fades', 'Beards', 'Classic', 'Lineup'];
 
 const GALLERY_ITEMS = [
@@ -9,7 +17,7 @@ const GALLERY_ITEMS = [
     title: 'Mid Skin Fade with Crop',
     stylist: 'Lee',
     category: ['Fades', 'Classic'],
-    image: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&q=80&w=600',
+    image: midSkinFadeImg,
     likes: '1.2k',
     tag: '#SKINFADE'
   },
@@ -18,7 +26,7 @@ const GALLERY_ITEMS = [
     title: 'Classic Scissor Cut',
     stylist: 'Leon',
     category: ['Classic'],
-    image: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=600',
+    image: classicScissorCutImg,
     likes: '840',
     tag: '#CLASSICCUT'
   },
@@ -27,7 +35,7 @@ const GALLERY_ITEMS = [
     title: 'Razor Beard Detailing',
     stylist: 'Swoop',
     category: ['Beards', 'Lineup'],
-    image: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&q=80&w=600',
+    image: razorBeardDetailImg,
     likes: '2.4k',
     tag: '#BEARDSHAPE'
   },
@@ -36,7 +44,7 @@ const GALLERY_ITEMS = [
     title: 'Textured Pompadour',
     stylist: 'Mere',
     category: ['Classic'],
-    image: 'https://images.unsplash.com/photo-1593702295094-aec22597af05?auto=format&fit=crop&q=80&w=600',
+    image: texturedPompadourImg,
     likes: '915',
     tag: '#POMPADOUR'
   },
@@ -45,7 +53,7 @@ const GALLERY_ITEMS = [
     title: 'Beard Grooming & Oil',
     stylist: 'Swoop',
     category: ['Beards'],
-    image: 'https://images.unsplash.com/photo-1599351431247-f5094087930b?auto=format&fit=crop&q=80&w=600',
+    image: beardGroomingOilImg,
     likes: '1.7k',
     tag: '#BEARDS'
   },
@@ -54,11 +62,12 @@ const GALLERY_ITEMS = [
     title: 'Buzz Cut with Razor Lineup',
     stylist: 'Lee',
     category: ['Fades', 'Lineup'],
-    image: 'https://images.unsplash.com/photo-1605497746445-97d1b0a9eaf4?auto=format&fit=crop&q=80&w=600',
+    image: buzzCutLineupImg,
     likes: '1.1k',
     tag: '#BUZZCUT'
   }
 ];
+
 
 export default function Gallery() {
   const [activeFilter, setActiveFilter] = useState('All');
